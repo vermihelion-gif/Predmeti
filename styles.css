@@ -1,0 +1,251 @@
+:root {
+  --c-base: #002b5c;
+  --c-accent: #ffb703;
+  --c-bg: #f4f6f8;
+  --c-text: #333333;
+  --c-surface: #ffffff;
+  --c-border: #e5e7eb;
+  --space-sm: 0.5rem;
+  --space-md: 1rem;
+  --space-lg: 2rem;
+  --radius: 8px;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: sans-serif;
+  background: var(--c-bg);
+  color: var(--c-text);
+  line-height: 1.6;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 250px 1fr;
+  grid-template-rows: auto 1fr auto;
+  grid-template-areas:
+    "header header"
+    "aside main"
+    "footer footer";
+  min-height: 100vh;
+  gap: var(--space-lg);
+  padding: var(--space-md);
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.header {
+  grid-area: header;
+  background: var(--c-base);
+  color: var(--c-surface);
+  padding: var(--space-md);
+  border-radius: var(--radius);
+  display: flex;
+  align-items: center;
+}
+
+.nav {
+  width: 100%;
+}
+
+.nav__list {
+  display: flex;
+  gap: var(--space-md);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  align-items: center;
+}
+
+.nav__link {
+  padding: var(--space-sm) var(--space-md);
+  color: var(--c-surface);
+  border-radius: var(--radius);
+  transition: background 0.2s;
+}
+
+.nav__link:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.nav__link--cta {
+  margin-left: auto;
+  background: var(--c-accent);
+  color: var(--c-base);
+  font-weight: 600;
+}
+
+.sidebar {
+  grid-area: aside;
+  background: var(--c-surface);
+  padding: var(--space-md);
+  border-radius: var(--radius);
+  border: 1px solid var(--c-border);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+}
+
+.sidebar-section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.sidebar-section__title {
+  margin: 0;
+  font-size: 1.2rem;
+  color: var(--c-base);
+}
+
+.sidebar-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.main {
+  grid-area: main;
+  background: var(--c-surface);
+  padding: var(--space-lg);
+  border-radius: var(--radius);
+  border: 1px solid var(--c-border);
+}
+
+.footer {
+  grid-area: footer;
+  background: var(--c-base);
+  color: var(--c-surface);
+  padding: var(--space-lg);
+  border-radius: var(--radius);
+}
+
+.footer__inner {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--space-lg);
+}
+
+.news-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--space-lg);
+  margin-top: var(--space-md);
+}
+
+.news-card {
+  background: var(--c-bg);
+  border-radius: var(--radius);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--c-border);
+}
+
+.news-card__figure {
+  margin: 0;
+}
+
+.news-card__img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  display: block;
+}
+
+.news-card__content {
+  padding: var(--space-md);
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  gap: var(--space-sm);
+}
+
+.news-card__title {
+  margin: 0;
+  font-size: 1.25rem;
+  color: var(--c-base);
+}
+
+.news-card__text {
+  margin: 0;
+  color: var(--c-text);
+  flex-grow: 1;
+}
+
+.news-card__meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: var(--space-sm);
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.news-card__link {
+  color: var(--c-base);
+}
+
+.contact-form {
+  max-width: 600px;
+}
+
+.contact-form__item {
+  display: grid;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-md);
+}
+
+.contact-form__label {
+  font-weight: 600;
+  color: var(--c-base);
+}
+
+.contact-form__input,
+.contact-form__textarea {
+  width: 100%;
+  padding: var(--space-sm) var(--space-md);
+  border: 1px solid var(--c-border);
+  border-radius: var(--radius);
+  font-family: inherit;
+  font-size: 1rem;
+}
+
+.contact-form__textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.contact-form__input:focus,
+.contact-form__textarea:focus {
+  outline: none;
+  border-color: var(--c-base);
+}
+
+.contact-form__button {
+  background: var(--c-base);
+  color: var(--c-surface);
+  border: none;
+  padding: var(--space-sm) var(--space-lg);
+  border-radius: var(--radius);
+  font-size: 1rem;
+  cursor: pointer;
+  font-weight: 600;
+  transition: opacity 0.2s;
+}
+
+.contact-form__button:hover {
+  opacity: 0.9;
+}
