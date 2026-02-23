@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Головна сторінка</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="layout">
+    <header class="header">
+      <nav class="nav">
+        <ul class="nav__list">
+          <li class="nav__item"><a href="index.html" class="nav__link">Мій лендінг</a></li>
+          <li class="nav__item"><a href="about.html" class="nav__link">Про нас</a></li>
+          <li class="nav__item nav__link--cta"><a href="contacts.html" class="nav__link">Контакти</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <aside class="sidebar">
+      <section class="sidebar-section">
+        <h3 class="sidebar-section__title">Корисні посилання</h3>
+        <ul class="sidebar-list">
+          <li><a href="https://developer.mozilla.org/">MDN Web Docs</a></li>
+          <li><a href="https://css-tricks.com/">CSS-Tricks</a></li>
+        </ul>
+      </section>
+      <section class="sidebar-section">
+        <h3 class="sidebar-section__title">Цінності</h3>
+        <ul class="sidebar-list">
+          <li>Якість коду</li>
+          <li>Практика</li>
+        </ul>
+      </section>
+    </aside>
+
+    <main class="main">
+      <h2>Останні новини</h2>
+      <div class="news-list">
+        <article class="news-card">
+          <figure class="news-card__figure">
+            <img src="assets/images/placeholder.jpg" alt="Новина 1" class="news-card__img">
+          </figure>
+          <div class="news-card__content">
+            <h3 class="news-card__title">Вивчення CSS Grid</h3>
+            <p class="news-card__text">Grid дозволяє створювати складні макети сторінок у двох вимірах.</p>
+            <div class="news-card__meta">
+              <span>10.10.2023</span>
+              <a href="#" class="news-card__link">Читати далі</a>
+            </div>
+          </div>
+        </article>
+        <article class="news-card">
+          <figure class="news-card__figure">
+            <img src="assets/images/placeholder.jpg" alt="Новина 2" class="news-card__img">
+          </figure>
+          <div class="news-card__content">
+            <h3 class="news-card__title">Основи Flexbox</h3>
+            <p class="news-card__text">Flexbox ідеально підходить для вирівнювання елементів.</p>
+            <div class="news-card__meta">
+              <span>12.10.2023</span>
+              <a href="#" class="news-card__link">Читати далі</a>
+            </div>
+          </div>
+        </article>
+        <article class="news-card">
+          <figure class="news-card__figure">
+            <img src="assets/images/placeholder.jpg" alt="Новина 3" class="news-card__img">
+          </figure>
+          <div class="news-card__content">
+            <h3 class="news-card__title">Що нового в HTML</h3>
+            <p class="news-card__text">Огляд семантичних тегів та їх правильне використання.</p>
+            <div class="news-card__meta">
+              <span>15.10.2023</span>
+              <a href="#" class="news-card__link">Читати далі</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer__inner">
+        <div>
+          <h3>Про нас</h3>
+          <p>© 2026 Група ІМ-24</p>
+        </div>
+        <div>
+          <h3>Наші контакти</h3>
+          <p>Email: test@example.com</p>
+        </div>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>
