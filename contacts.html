@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Контакти - Лабораторна 5</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="layout">
+    <header class="header">
+      <nav class="nav">
+        <ul class="nav__list">
+          <li class="nav__item"><a href="index.html" class="nav__link">Головна</a></li>
+          <li class="nav__item"><a href="about.html" class="nav__link">Про нас</a></li>
+          <li class="nav__item nav__link--cta"><a href="contacts.html" class="nav__link">Контакти</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <aside class="sidebar">
+      <section class="sidebar-section">
+        <h3 class="sidebar-section__title">Корисні посилання</h3>
+        <ul class="sidebar-list">
+          <li><a href="https://developer.mozilla.org/" target="_blank" rel="noopener noreferrer">MDN Web Docs</a></li>
+          <li><a href="https://css-tricks.com/" target="_blank" rel="noopener noreferrer">CSS-Tricks</a></li>
+        </ul>
+      </section>
+      <section class="sidebar-section">
+        <h3 class="sidebar-section__title">Соціальні мережі</h3>
+        <ul class="sidebar-list">
+          <li><a href="#">Facebook</a></li>
+          <li><a href="#">Instagram</a></li>
+          <li><a href="#">LinkedIn</a></li>
+        </ul>
+      </section>
+    </aside>
+
+    <main class="main">
+      <h2>Зв'яжіться з нами</h2>
+      <form class="contact-form" action="#" method="post">
+        <div class="contact-form__item">
+          <label for="name" class="contact-form__label">Ім'я</label>
+          <input type="text" id="name" name="name" class="contact-form__input" required placeholder="Ваше ім'я">
+        </div>
+        <div class="contact-form__item">
+          <label for="email" class="contact-form__label">Email</label>
+          <input type="email" id="email" name="email" class="contact-form__input" required placeholder="Ваш email">
+        </div>
+        <div class="contact-form__item">
+          <label for="message" class="contact-form__label">Повідомлення</label>
+          <textarea id="message" name="message" class="contact-form__textarea" placeholder="Ваше повідомлення"></textarea>
+        </div>
+        <button type="submit" class="contact-form__button">Надіслати</button>
+      </form>
+    </main>
+
+    <footer class="footer">
+      <div class="footer__inner">
+        <div class="footer__text">
+          <h3>Про нас</h3>
+          <p>© 2026 Група ІМ-24</p>
+        </div>
+        <div>
+          <h3>Наші контакти</h3>
+          <p>Email: test@example.com</p>
+        </div>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>

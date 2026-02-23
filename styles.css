@@ -1,0 +1,345 @@
+:root {
+  --c-base: #002b5c;
+  --c-accent: #ffb703;
+  --c-bg: #f4f6f8;
+  --c-text: #333333;
+  --c-surface: #ffffff;
+  --c-border: #e5e7eb;
+  --space-sm: 0.5rem;
+  --space-md: 1rem;
+  --space-lg: 2rem;
+  --radius: 8px;
+  --fs-base: clamp(1rem, 0.95vw + 0.8rem, 1.125rem);
+  --fs-h2: clamp(1.5rem, 2vw + 1rem, 2.25rem);
+  --fs-h3: clamp(1.25rem, 1.5vw + 1rem, 1.5rem);
+  --fs-sm: clamp(0.875rem, 0.5vw + 0.75rem, 1rem);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --c-base: #66b2ff;
+    --c-accent: #ffc107;
+    --c-bg: #121212;
+    --c-text: #e0e0e0;
+    --c-surface: #1e1e1e;
+    --c-border: #333333;
+  }
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: sans-serif;
+  font-size: var(--fs-base);
+  background: var(--c-bg);
+  color: var(--c-text);
+  line-height: 1.6;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+h2 {
+  font-size: var(--fs-h2);
+}
+
+h3 {
+  font-size: var(--fs-h3);
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto auto 1fr auto;
+  grid-template-areas:
+    "header"
+    "aside"
+    "main"
+    "footer";
+  min-height: 100dvh;
+  gap: var(--space-lg);
+  padding: var(--space-md);
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+@media (min-width: 640px) {
+  .layout {
+    grid-template-columns: 220px 1fr;
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas:
+      "header header"
+      "aside main"
+      "footer footer";
+  }
+}
+
+@media (min-width: 1024px) {
+  .layout {
+    grid-template-columns: 280px 1fr;
+  }
+}
+
+.header {
+  grid-area: header;
+  background: var(--c-base);
+  color: var(--c-surface);
+  padding: var(--space-md);
+  border-radius: var(--radius);
+  display: flex;
+  align-items: center;
+}
+
+@media (prefers-color-scheme: dark) {
+  .header {
+    color: #121212;
+  }
+}
+
+.nav {
+  width: 100%;
+}
+
+.nav__list {
+  display: flex;
+  gap: var(--space-md);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.nav__link {
+  padding: var(--space-sm) var(--space-md);
+  color: var(--c-surface);
+  border-radius: var(--radius);
+  transition: background 0.2s;
+}
+
+@media (prefers-color-scheme: dark) {
+  .nav__link {
+    color: #121212;
+  }
+}
+
+.nav__link:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.nav__link--cta {
+  margin-left: auto;
+  background: var(--c-accent);
+  color: var(--c-base);
+  font-weight: 600;
+}
+
+@media (prefers-color-scheme: dark) {
+  .nav__link--cta {
+    color: #121212;
+  }
+}
+
+.sidebar {
+  grid-area: aside;
+  background: var(--c-surface);
+  padding: var(--space-md);
+  border-radius: var(--radius);
+  border: 1px solid var(--c-border);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+}
+
+.sidebar-section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.sidebar-section__title {
+  margin: 0;
+  color: var(--c-base);
+}
+
+.sidebar-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.main {
+  grid-area: main;
+  background: var(--c-surface);
+  padding: var(--space-lg);
+  border-radius: var(--radius);
+  border: 1px solid var(--c-border);
+}
+
+.footer {
+  grid-area: footer;
+  background: var(--c-base);
+  color: var(--c-surface);
+  padding: var(--space-lg);
+  border-radius: var(--radius);
+}
+
+@media (prefers-color-scheme: dark) {
+  .footer {
+    color: #121212;
+  }
+}
+
+.footer__inner {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-lg);
+}
+
+@media (min-width: 640px) {
+  .footer__inner {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+}
+
+.footer__text {
+  order: 2;
+}
+
+@media (min-width: 640px) {
+  .footer__text {
+    order: 0;
+  }
+}
+
+.news-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--space-lg);
+  margin-top: var(--space-md);
+}
+
+.news-card {
+  background: var(--c-bg);
+  border-radius: var(--radius);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--c-border);
+}
+
+.news-card__figure {
+  margin: 0;
+  aspect-ratio: 16 / 9;
+  overflow: clip;
+}
+
+.news-card__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.news-card__content {
+  padding: var(--space-md);
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  gap: var(--space-sm);
+}
+
+.news-card__title {
+  margin: 0;
+  color: var(--c-base);
+}
+
+.news-card__text {
+  margin: 0;
+  color: var(--c-text);
+  flex-grow: 1;
+}
+
+.news-card__meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: var(--space-sm);
+  font-size: var(--fs-sm);
+  font-weight: 600;
+  background: color-mix(in srgb, var(--c-surface) 92%, #fff 8%);
+  padding: var(--space-sm);
+  border-radius: var(--radius);
+}
+
+.news-card__link {
+  color: var(--c-base);
+}
+
+.contact-form {
+  max-width: 600px;
+}
+
+.contact-form__item {
+  display: grid;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-md);
+}
+
+.contact-form__label {
+  font-weight: 600;
+  color: var(--c-base);
+}
+
+.contact-form__input,
+.contact-form__textarea {
+  width: 100%;
+  padding: var(--space-sm) var(--space-md);
+  border: 1px solid var(--c-border);
+  border-radius: var(--radius);
+  font-family: inherit;
+  font-size: var(--fs-base);
+  background: var(--c-surface);
+  color: var(--c-text);
+}
+
+.contact-form__textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.contact-form__input:focus,
+.contact-form__textarea:focus {
+  outline: none;
+  border-color: var(--c-base);
+}
+
+.contact-form__button {
+  background: var(--c-base);
+  color: var(--c-surface);
+  border: none;
+  padding: var(--space-sm) var(--space-lg);
+  border-radius: var(--radius);
+  font-size: var(--fs-base);
+  cursor: pointer;
+  font-weight: 600;
+  transition: opacity 0.2s;
+}
+
+@media (prefers-color-scheme: dark) {
+  .contact-form__button {
+    color: #121212;
+  }
+}
+
+.contact-form__button:hover {
+  opacity: 0.9;
+}
