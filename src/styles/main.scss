@@ -1,0 +1,35 @@
+@use './abstracts/index' as ui;
+@use './base/reset';
+
+body {
+  background-color: ui.$bg-color;
+  color: ui.$text-color;
+  font-family: sans-serif;
+  line-height: 1.6;
+}
+
+header {
+  background-color: ui.$primary-color;
+  color: white;
+  padding: 1rem;
+  text-align: center;
+}
+
+nav a {
+  color: white;
+  margin: 0 15px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+main {
+  padding: 2rem;
+}
+
+footer {
+  text-align: center;
+  padding: 1rem;
+  background-color: ui.$text-color;
+  color: white;
+  margin-top: auto;
+}
