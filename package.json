@@ -1,0 +1,19 @@
+{
+  "name": "lab7-tailwind",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.2.1",
+    "autoprefixer": "^10.4.16",
+    "postcss": "^8.4.31",
+    "sass": "^1.69.5",
+    "tailwindcss": "^4.2.1",
+    "vite": "^5.0.0",
+    "vite-plugin-handlebars": "^2.0.0"
+  }
+}

@@ -1,0 +1,19 @@
+@import "tailwindcss";
+
+@theme static {
+  --color-primary: #3498db;
+  --color-surface: #f4f4f9;
+  --color-text: #333;
+  --color-fg-muted: #666;
+}
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer components {
+  .card {
+    @apply p-6 rounded-xl shadow-lg border border-gray-100 transition-all;
+  }
+  .card__meta {
+    @apply text-sm uppercase tracking-wider font-semibold;
+  }
+}

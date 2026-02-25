@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="uk"> <head>
+  {{> head pageTitle=title }}
+</head>
+<body class="bg-[color:var(--color-surface)] text-[color:var(--color-text)] antialiased">
+  {{> header }}
+  <main class="container mx-auto px-4 py-8">
+    {{> @partial-block }}
+  </main>
+  {{> footer }}
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>
